@@ -1,14 +1,17 @@
 import { Router } from "express";
 import { CreateItemController } from "../controllers/item/CreateItemController";
 import { GetAllItensController } from "../controllers/item/GetAllItensController";
+import { GetItemController } from "../controllers/item/GetItemController";
 
 const createItemController = new CreateItemController();
-const grtAllItensController = new GetAllItensController();
+const getAllItensController = new GetAllItensController();
+const getItemController = new GetItemController();
 
 const itemRoutes = Router();
 
 
 itemRoutes.post("/create", createItemController.handle);
-itemRoutes.get("/getall", grtAllItensController.handle);
+itemRoutes.get("/getall", getAllItensController.handle);
+itemRoutes.get("/:nome", getItemController.handle);
 
 export default itemRoutes;
