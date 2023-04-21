@@ -1,12 +1,17 @@
 import { Router } from "express";
-import { CreateClienteController } from "../controllers/cliente/CreateClienteController";
+import { CreateClienteController} from "../controllers/cliente/CreateClienteController";
+import { GetAllClientesController } from "../controllers/cliente/GetAllClienteController";
 
 
 
-const createUserController = new CreateClienteController();
+
+const createClienteController = new CreateClienteController();
+const getALlClienteController = new GetAllClientesController();
+
 const clienteRoutes = Router();
 
-clienteRoutes.post("/",createUserController.handle);
+clienteRoutes.post("/",createClienteController.handle);
+clienteRoutes.get("/", getALlClienteController.handle);
 
 
-export {clienteRoutes}
+export default clienteRoutes
