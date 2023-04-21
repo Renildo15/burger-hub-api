@@ -22,7 +22,7 @@ export class DeleteClienteController{
 
             const deleteCliente = new DeleteClienteUseCase();
 
-            const deletedCliente = deleteCliente.execute(username);
+            const deletedCliente = await deleteCliente.execute(username);
 
             return res.status(200).json({
                 success: "Cliente deleted!",
