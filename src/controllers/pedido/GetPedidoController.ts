@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetPedidoUseCase } from "../../modules/clientes/useCases/createPedido/GetPedidoUseCase";
+import { GetPedidoUseCase } from "../../modules/pedidos/createPedido/GetPedidoUseCase";
 
 
 export class GetPedidoController{

@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { GetPedidoByClienteUseCase } from "../../modules/clientes/useCases/createPedido/GetPedidoByClienteUseCase";
+import { GetPedidoByClienteUseCase } from "../../modules/pedidos/createPedido/GetPedidoByClienteUseCase";
 import { prisma } from "../../prisma/client";
 
 

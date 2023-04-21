@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { DeletePedidoUseCase } from "../../modules/clientes/useCases/createPedido/DeletePedidoUseCase";
+import { DeletePedidoUseCase } from "../../modules/pedidos/createPedido/DeletePedidoUseCase";
 
 
 export class DeletePedidoController {
