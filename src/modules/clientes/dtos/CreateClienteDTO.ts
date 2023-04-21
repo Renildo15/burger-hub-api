@@ -3,4 +3,6 @@ export interface CreateClienteDTO{
     nome: string
     telefone: string
     endereco: string
+    username: string
+    password: string
 }
