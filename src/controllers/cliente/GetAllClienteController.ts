@@ -3,12 +3,22 @@ import { GetAllClientesUseCase } from "../../modules/clientes/useCases/createCli
 
 
 
-export class GetAllClientesController {
-    async handle(req: Request, res: Response) {
-        const getAllClienteUseCase = new GetAllClientesUseCase();
+export class GetAllClientesController{
+    async handle(req: Request, res: Response){
+        try {
+            const getAllClienteController = new GetAllClientesUseCase();
 
-        const result = await getAllClienteUseCase.execute();
-        console.log(result)
-        return res.status(200).json(result);
+            const result = await getAllClienteController.execute();
+
+            if(result === null){
+                return res.status(404).json({
+                    message: "There are no Clientes listed."
+                });
+            }
+
+            return res.status(200).json(result);
+        } catch (error) {
+            return res.status(400).send({error: "Falha na busca pelos Clientes"});
+        }
     }
 }
