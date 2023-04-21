@@ -3,11 +3,11 @@ import { CreateClienteUseCase } from "../../modules/clientes/useCases/createClie
 
 export class CreateClienteController{
     async handle(req: Request, res: Response){
-        const {nome, email, telefone, endereco} = req.body
+        const {nome, email, username, password, telefone, endereco} = req.body
 
         const createClienteUseCase = new CreateClienteUseCase();
 
-        const result = await createClienteUseCase.execute({nome, email, telefone, endereco});
+        const result = await createClienteUseCase.execute({nome, email, username, password, telefone, endereco});
 
         return res.status(201).json(result);
     }
