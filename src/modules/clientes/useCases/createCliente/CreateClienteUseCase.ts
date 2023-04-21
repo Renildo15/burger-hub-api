@@ -5,10 +5,10 @@ import { AppError } from "../../../../errors/AppError";
 
 export class CreateClienteUseCase{
     //verificar se o cliente já existe
-    async execute({nome, email, telefone, endereco}: CreateClienteDTO): Promise<Cliente>{
+    async execute({nome, email, username, password, telefone, endereco}: CreateClienteDTO): Promise<Cliente>{
         const clienteAlreadyExists = await prisma.cliente.findUnique({
             where:{
-                email,
+                username,
             }
         });
 
@@ -19,6 +19,8 @@ export class CreateClienteUseCase{
             data:{
                 nome,
                 email,
+                username,
+                password,
                 telefone,
                 endereco
             }
