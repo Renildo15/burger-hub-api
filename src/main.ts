@@ -1,18 +1,28 @@
-import express from "express";
-import bodyParser from "body-parser";
+import "express-async-errors";
+import express, { NextFunction, Request, Response } from "express";
 import cors from "cors"
-import { Request, Response } from "express";
+import { routes } from "./routes";
+import { AppError } from "./errors/AppError";
 
 const app = express()
 const PORT = 3000
 
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(bodyParser.json());
+app.use(express.json());
 
-app.get("/", (req:Request, res:Response)=>{
-    res.status(200).send({success:"Server On and Connected!"})
+app.use(routes);
+app.use((error: Error, request: Request, response: Response, next: NextFunction)=>{
+    if(error instanceof AppError){
+        return response.status(error.statusCode).json({
+            status:"error",
+            message: error.message
+        })
+    }
+
+    return response.status(500).json({
+        status:"error",
+        message: `Internal server error - ${error.message}`
+    })
 })
-
 
 app.use(cors());
 
