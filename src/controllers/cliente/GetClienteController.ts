@@ -10,7 +10,7 @@ export class GetClienteController{
             const getCliente = new GetClienteUseCase();
 
             const cliente = await getCliente.execute(username);
-            console.log(cliente)
+
             if(cliente === null){
                 return res.status(404).json({
                     message: "Cliente not found"

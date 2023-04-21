@@ -18,6 +18,19 @@ model Cliente{
   password String 
   telefone String
   endereco String
+  pedidos Pedido[]
   
   @@map("clientes")
+}
+
+
+model Pedido{
+  id String @id @unique @default(uuid())
+  data DateTime @default(now())
+  total Int
+  status String @default("Pendente")
+  cliente Cliente @relation(fields: [cliente_username], references: [username])
+  cliente_username String
+
+  @@map("pedidos")
 }
