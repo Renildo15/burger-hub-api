@@ -22,7 +22,7 @@ export class GetClienteController{
             });
 
         } catch (error) {
-            return res.status(400).send({error: "Falha na busca pelo Cliente"});
+            return res.status(400).send({error: "Customer search failed"});
         }
     }
 }

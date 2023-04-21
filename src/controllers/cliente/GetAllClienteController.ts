@@ -18,7 +18,7 @@ export class GetAllClientesController{
 
             return res.status(200).json(result);
         } catch (error) {
-            return res.status(400).send({error: "Falha na busca pelos Clientes"});
+            return res.status(400).send({error: "Customer search failure"});
         }
     }
 }
