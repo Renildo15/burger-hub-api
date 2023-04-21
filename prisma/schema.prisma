@@ -16,23 +16,8 @@ model Cliente{
   nome String
   email String @unique
   telefone String
-  endereco Endereco @relation("endereco_cliente", fields: [endereco_id], references: [id])
-  endereco_id String @unique
+  endereco String
   
   @@map("clientes")
 }
 
-model Endereco{
-  id String @id @unique @default(uuid())
-  rua String
-  numero Int
-  complemento String
-  bairro String
-  cidade String
-  estado String
-  cep String
-  cliente Cliente? @relation("endereco_cliente")
-  cliente_id String @unique
-
-  @@map("enderecos")
-}
