@@ -10,7 +10,7 @@ export class GetAllPedidoItensController{
 
             const pedidoItens = await getAllPedidoItensUseCase.execute();
 
-            if(pedidoItens === null){
+            if(pedidoItens.length === 0){
                 return res.status(404).json({
                     message: "There are no PedidoItem listed."
                 })

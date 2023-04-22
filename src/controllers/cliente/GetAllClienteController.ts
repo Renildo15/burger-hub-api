@@ -10,7 +10,7 @@ export class GetAllClientesController{
 
             const result = await getAllClienteController.execute();
 
-            if(result === null){
+            if(result.length === 0){
                 return res.status(404).json({
                     message: "There are no Clientes listed."
                 });
