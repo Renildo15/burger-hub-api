@@ -8,7 +8,7 @@ export class GetAllItensController{
 
             const itens = await getAllItensUseCase.execute();
 
-            if(itens === null){
+            if(itens.length === 0){
                 return res.status(404).json({
                     message: "There are no Item listed."
                 });

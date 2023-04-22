@@ -9,7 +9,7 @@ export class GetAllPedidoController{
 
             const pedidos = await getAllPedidoUseCase.execute();
 
-            if(pedidos === null){
+            if(pedidos.length === 0){
                 return res.status(404).json({
                     message: "There are no Pedidos listed."
                 });
