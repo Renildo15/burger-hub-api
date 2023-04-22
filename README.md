@@ -1,8 +1,10 @@
 # Burger Hub
-<hr>
-### Descrição do projeto
-Projeto de uma hamburgueria utilizando TypeScript, NodeJs e Prisma
 
+### Descrição do projeto:
+
+Projeto de uma hamburgueria utilizando TypeScript, NodeJs e Prisma.
+
+---
 ### Rotas
 
 ##### Clientes:
@@ -12,7 +14,7 @@ Projeto de uma hamburgueria utilizando TypeScript, NodeJs e Prisma
 * http://localhost:3000/clientes/:username/ (DELETE)
 * http://localhost:3000/clientes/:username/ (PATCH)
 
-#####body:
+##### body:
 Para criar um cliente e atualizar também.
 ```json
 {
@@ -24,8 +26,9 @@ Para criar um cliente e atualizar também.
     "endereco": ""
 }
 ```
+---
 
-<hr>
+
 ##### Pedidos:
 * http://localhost:3000/pedidos/create/ (POST)
 * http://localhost:3000/pedidos/getall/ (GET)
@@ -34,7 +37,7 @@ Para criar um cliente e atualizar também.
 * http://localhost:3000/pedidos/:username/:id (DELETE)
 * http://localhost:3000/pedidos/update/:id (PATCH)
 
-#####body:
+##### body:
 Para criar um Pedido e atualizar também. 
 ```json
 {
@@ -43,7 +46,8 @@ Para criar um Pedido e atualizar também.
     "status": "", 
 }
 ```
-<hr>
+---
+
 ##### Itens:
 * http://localhost:3000/itens/create/ (POST)
 * http://localhost:3000/itens/getall/ (GET)
@@ -51,7 +55,7 @@ Para criar um Pedido e atualizar também.
 * http://localhost:3000/itens/:nome/ (DELETE)
 * http://localhost:3000/itens/update/:nome/ (PATCH)
 
-#####body:
+##### body:
 Para criar um Item e atualizar também. 
 ```json
 {
@@ -60,7 +64,8 @@ Para criar um Item e atualizar também.
     "preco": "", 
 }
 ```
-<hr>
+---
+
 ##### ItensPedidos:
 * http://localhost:3000/pedidos_itens/create/ (POST)
 * http://localhost:3000/pedidos_itens/getall/ (GET)
@@ -68,7 +73,7 @@ Para criar um Item e atualizar também.
 * http://localhost:3000/pedidos_itens/:id/ (DELETE)
 * http://localhost:3000/pedidos_itens/update/:id/ (PATCH)
 
-#####body:
+##### body:
 Para criar um ItemPedido e atualizar também. 
 ```json
 {
@@ -77,17 +82,18 @@ Para criar um ItemPedido e atualizar também.
    "valor": ""
 }
 ```
-<hr>
+---
+
 
 ##### Autenticação:
 * http://localhost:3000/auth/login/ (POST)
 
-#####body:
-<p></p>Para poder criar pedidos, itens e itensPedidos é necessário se autenticar. Ao se autenticar você vai receber um Token, onde deve ser definido no Headers:</p>
+##### body:
+Para poder criar pedidos, itens e itensPedidos é necessário se autenticar. Ao se autenticar você vai receber um Token, onde deve ser definido no Headers:
 
 Authorization = Bearer <strong>Token</strong>
 
-<p>Algumas rotas não precisam de autenticação para serem acessadas. Como todas as getall e as rotas de detail. A rota de create de clientes é a única rota de criação que não necessita está logado para criar um dado.</p>
+Algumas rotas não precisam de autenticação para serem acessadas. Como todas as getall e as rotas de detail. A rota de create de clientes é a única rota de criação que não necessita está logado para criar um dado.
 ```json
 {
    "username": "", 
@@ -95,9 +101,9 @@ Authorization = Bearer <strong>Token</strong>
 }
 ```
 
-<hr>
 
-###Instalação
+
+### Instalação
 Siga os passos abaixo para configurar e executar o projeto em sua máquina local.
 
 1. Clonar o repositório
