@@ -1,22 +1,14 @@
 import "express-async-errors";
 import express, { NextFunction, Request, Response } from "express";
 import cors from "cors"
-import clienteRoutes from "./routes/cliente.routes";
-import pedidoRoutes from "./routes/pedido.routes";
-import itemRoutes from "./routes/item.routes";
-import pedidoItemRoutes from "./routes/pedidoItem.routes";
-import authRoutes from "./routes/autenticacao.routes";
+import { routes } from "./routes";
 import { AppError } from "./errors/AppError";
 
 const app = express()
 const PORT = 3000
 
 app.use(express.json());
-app.use("/clientes", clienteRoutes);
-app.use("/pedidos", pedidoRoutes);
-app.use("/itens", itemRoutes);
-app.use("/pedidos_itens", pedidoItemRoutes);
-app.use("/auth", authRoutes);
+
 app.use((error: Error, request: Request, response: Response, next: NextFunction)=>{
     if(error instanceof AppError){
         return response.status(error.statusCode).json({
@@ -32,7 +24,7 @@ app.use((error: Error, request: Request, response: Response, next: NextFunction)
 })
 
 app.use(cors());
-
+app.use(routes);
 app.listen(PORT, ()=>{
     console.log("Running")
 })
