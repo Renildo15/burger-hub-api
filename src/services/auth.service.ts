@@ -1,9 +1,8 @@
 import jwt from "jsonwebtoken";
-const authConfig = require("../config/auth");
 
 export class GenerateToken{
     async execute(username: string): Promise<string>{
-        return jwt.sign({username:username},authConfig.secret_jwt, {
+        return jwt.sign({username:username},"03239ae2504fbbeb822bde81bf813cde", {
             expiresIn: 86400,
         });
     }
