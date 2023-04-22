@@ -4,11 +4,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "18.16.0"
+  },
   "scripts": {
     "dev": "tsx src/main.ts",
     "dev:watch": "tsx watch src/main.ts",
     "build": "tsup src",
-    "start": "node dist/main.js"
+    "start": "node dist/main.cjs"
   },
   "repository": {
     "type": "git",
