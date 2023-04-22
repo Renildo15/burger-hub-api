@@ -34,3 +34,12 @@ model Pedido{
 
   @@map("pedidos")
 }
+
+model Item{
+  id String @id @default(uuid())
+  nome String @unique
+  descricao String
+  preco Float
+
+  @@map("itens")
+}
