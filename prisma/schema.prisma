@@ -31,6 +31,7 @@ model Pedido{
   status String @default("Pendente")
   cliente Cliente @relation(fields: [cliente_username], references: [username])
   cliente_username String
+  pedido_itens PedidoItem[]
 
   @@map("pedidos")
 }
@@ -40,6 +41,18 @@ model Item{
   nome String @unique
   descricao String
   preco Float
+  pedido_itens PedidoItem[]
 
   @@map("itens")
+}
+
+model PedidoItem{
+  id String @id @unique @default(uuid())
+  pedido_id String
+  item_id String
+  pedido Pedido @relation(fields: [pedido_id], references: [id])
+  item Item @relation(fields: [item_id], references: [id])
+  valor Float
+
+  @@map("pedidoItens")
 }
