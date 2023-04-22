@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
-const authConfig = require("../config/auth");
+
 
 export class AuthMiddleWare {
     async execute(req: Request, res: Response, next: NextFunction) {
@@ -23,7 +23,7 @@ export class AuthMiddleWare {
             return res.status(401).send({ error: "Authentication error. Check token format" });
         }
 
-        jwt.verify(token, authConfig.secret_jwt, (error: any, decoded: any) => {
+        jwt.verify(token,"03239ae2504fbbeb822bde81bf813cde", (error: any, decoded: any) => {
             if (error) {
             return res.status(401).send({ message: "Token invalid!" });
             }
