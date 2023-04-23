@@ -18,10 +18,10 @@ const authMiddleware = new AuthMiddleWare();
 const pedidoRoutes = Router();
 
 pedidoRoutes.post("/create",authMiddleware.execute, createPedidoController.handle);
-pedidoRoutes.get("/getall", getAllPedidoController.handle);
-pedidoRoutes.get("/:username", getPedidoByClienteController.handle);
+pedidoRoutes.get("/getall", authMiddleware.execute, getAllPedidoController.handle);
+pedidoRoutes.get("/:username", authMiddleware.execute, getPedidoByClienteController.handle);
 pedidoRoutes.delete("/:username/:id", authMiddleware.execute,  deletePedidoController.handle);
-pedidoRoutes.get("/pedido/:id",getPedidoController.handle);
+pedidoRoutes.get("/pedido/:id",authMiddleware.execute, getPedidoController.handle);
 pedidoRoutes.patch("/update/:id", authMiddleware.execute, updatePedidoController.handle);
 
 
