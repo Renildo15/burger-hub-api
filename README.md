@@ -8,11 +8,11 @@ Projeto de uma hamburgueria utilizando TypeScript, NodeJs e Prisma.
 ### Rotas
 
 ##### Clientes:
-* http://localhost:3000/clientes/create/ (POST)
-* http://localhost:3000/clientes/getall/ (GET)
-* http://localhost:3000/clientes/:username/ (GET)
-* http://localhost:3000/clientes/:username/ (DELETE)
-* http://localhost:3000/clientes/:username/ (PATCH)
+* https://burger-hub-api.onrender.com/clientes/create/ (POST)
+* https://burger-hub-api.onrender.com/clientes/getall/ (GET)
+* https://burger-hub-api.onrender.com/clientes/:username/ (GET)
+* https://burger-hub-api.onrender.com/clientes/:username/ (DELETE)
+* https://burger-hub-api.onrender.com/clientes/:username/ (PATCH)
 
 ##### body:
 Para criar um cliente e atualizar também.
@@ -30,74 +30,73 @@ Para criar um cliente e atualizar também.
 
 
 ##### Pedidos:
-* http://localhost:3000/pedidos/create/ (POST)
-* http://localhost:3000/pedidos/getall/ (GET)
-* http://localhost:3000/pedidos/:username/ (GET)
-* http://localhost:3000/pedidos/pedido/:id (GET)
-* http://localhost:3000/pedidos/:username/:id (DELETE)
-* http://localhost:3000/pedidos/update/:id (PATCH)
+* https://burger-hub-api.onrender.com/pedidos/create/ (POST)
+* https://burger-hub-api.onrender.com/pedidos/getall/ (GET)
+* https://burger-hub-api.onrender.com/pedidos/:username/ (GET)
+* https://burger-hub-api.onrender.com/pedidos/pedido/:id (GET)
+* https://burger-hub-api.onrender.com/pedidos/:username/:id (DELETE)
+* https://burger-hub-api.onrender.com/pedidos/update/:id (PATCH)
 
 ##### body:
-Para criar um Pedido e atualizar também. 
+Para criar um Pedido e atualizar também. Total é do tipo float 
 ```json
 {
     "cliente_username": "", 
-    "total": "", 
-    "status": "", 
+    "total": , 
+    "status": "" 
 }
 ```
 ---
 
 ##### Itens:
-* http://localhost:3000/itens/create/ (POST)
-* http://localhost:3000/itens/getall/ (GET)
-* http://localhost:3000/itens/:nome/ (GET)
-* http://localhost:3000/itens/:nome/ (DELETE)
-* http://localhost:3000/itens/update/:nome/ (PATCH)
+* https://burger-hub-api.onrender.com/itens/create/ (POST)
+* https://burger-hub-api.onrender.com/itens/getall/ (GET)
+* https://burger-hub-api.onrender.com/itens/:nome/ (GET)
+* https://burger-hub-api.onrender.com/itens/:nome/ (DELETE)
+* https://burger-hub-api.onrender.com/itens/update/:nome/ (PATCH)
 
 ##### body:
-Para criar um Item e atualizar também. 
+Para criar um Item e atualizar também. Preco é do tipo float
 ```json
 {
     "nome": "", 
     "descricao": "", 
-    "preco": "", 
+    "preco":  
 }
 ```
 ---
 
 ##### ItensPedidos:
-* http://localhost:3000/pedidos_itens/create/ (POST)
-* http://localhost:3000/pedidos_itens/getall/ (GET)
-* http://localhost:3000/pedidos_itens/:id/ (GET)
-* http://localhost:3000/pedidos_itens/:id/ (DELETE)
-* http://localhost:3000/pedidos_itens/update/:id/ (PATCH)
+* https://burger-hub-api.onrender.com/pedidos_itens/create/ (POST)
+* https://burger-hub-api.onrender.com/pedidos_itens/getall/ (GET)
+* https://burger-hub-api.onrender.com/pedidos_itens/:id/ (GET)
+* https://burger-hub-api.onrender.com/pedidos_itens/:id/ (DELETE)
+* https://burger-hub-api.onrender.com/pedidos_itens/update/:id/ (PATCH)
 
 ##### body:
-Para criar um ItemPedido e atualizar também. 
+Para criar um ItemPedido e atualizar também. Valor é do tipo float.
 ```json
 {
    "pedido_id": "", 
    "item_id": "", 
-   "valor": ""
+   "valor": 
 }
 ```
 ---
 
 
 ##### Autenticação:
-* http://localhost:3000/auth/login/ (POST)
+* https://burger-hub-api.onrender.com/auth/login/ (POST)
 
 ##### body:
 Para poder criar pedidos, itens e itensPedidos é necessário se autenticar. Ao se autenticar você vai receber um Token, onde deve ser definido no Headers:
 
 Authorization = Bearer <strong>Token</strong>
 
-Algumas rotas não precisam de autenticação para serem acessadas. Como todas as getall e as rotas de detail. A rota de create de clientes é a única rota de criação que não necessita está logado para criar um dado.
 ```json
 {
    "username": "", 
-   "password": "", 
+   "password": ""
 }
 ```
 
