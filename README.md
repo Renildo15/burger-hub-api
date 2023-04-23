@@ -8,11 +8,11 @@ Projeto de uma hamburgueria utilizando TypeScript, NodeJs e Prisma.
 ### Rotas
 
 ##### Clientes:
-*https://burger-hub-api.onrender.com/clientes/create/ (POST)
-*https://burger-hub-api.onrender.com/clientes/getall/ (GET)
-*https://burger-hub-api.onrender.com/clientes/:username/ (GET)
-*https://burger-hub-api.onrender.com/clientes/:username/ (DELETE)
-*https://burger-hub-api.onrender.com/clientes/:username/ (PATCH)
+* https://burger-hub-api.onrender.com/clientes/create/ (POST)
+* https://burger-hub-api.onrender.com/clientes/getall/ (GET)
+* https://burger-hub-api.onrender.com/clientes/:username/ (GET)
+* https://burger-hub-api.onrender.com/clientes/:username/ (DELETE)
+* https://burger-hub-api.onrender.com/clientes/:username/ (PATCH)
 
 ##### body:
 Para criar um cliente e atualizar também.
@@ -30,12 +30,12 @@ Para criar um cliente e atualizar também.
 
 
 ##### Pedidos:
-*https://burger-hub-api.onrender.com/pedidos/create/ (POST)
-*https://burger-hub-api.onrender.com/pedidos/getall/ (GET)
-*https://burger-hub-api.onrender.com/pedidos/:username/ (GET)
-*https://burger-hub-api.onrender.com/pedidos/pedido/:id (GET)
-*https://burger-hub-api.onrender.com/pedidos/:username/:id (DELETE)
-*https://burger-hub-api.onrender.com/pedidos/update/:id (PATCH)
+* https://burger-hub-api.onrender.com/pedidos/create/ (POST)
+* https://burger-hub-api.onrender.com/pedidos/getall/ (GET)
+* https://burger-hub-api.onrender.com/pedidos/:username/ (GET)
+* https://burger-hub-api.onrender.com/pedidos/pedido/:id (GET)
+* https://burger-hub-api.onrender.com/pedidos/:username/:id (DELETE)
+* https://burger-hub-api.onrender.com/pedidos/update/:id (PATCH)
 
 ##### body:
 Para criar um Pedido e atualizar também. Total é do tipo float 
@@ -49,11 +49,11 @@ Para criar um Pedido e atualizar também. Total é do tipo float
 ---
 
 ##### Itens:
-*https://burger-hub-api.onrender.com/itens/create/ (POST)
-*https://burger-hub-api.onrender.com/itens/getall/ (GET)
-*https://burger-hub-api.onrender.com/itens/:nome/ (GET)
-*https://burger-hub-api.onrender.com/itens/:nome/ (DELETE)
-*https://burger-hub-api.onrender.com/itens/update/:nome/ (PATCH)
+* https://burger-hub-api.onrender.com/itens/create/ (POST)
+* https://burger-hub-api.onrender.com/itens/getall/ (GET)
+* https://burger-hub-api.onrender.com/itens/:nome/ (GET)
+* https://burger-hub-api.onrender.com/itens/:nome/ (DELETE)
+* https://burger-hub-api.onrender.com/itens/update/:nome/ (PATCH)
 
 ##### body:
 Para criar um Item e atualizar também. Preco é do tipo float
@@ -67,11 +67,11 @@ Para criar um Item e atualizar também. Preco é do tipo float
 ---
 
 ##### ItensPedidos:
-*https://burger-hub-api.onrender.com/pedidos_itens/create/ (POST)
-*https://burger-hub-api.onrender.com/pedidos_itens/getall/ (GET)
-*https://burger-hub-api.onrender.com/pedidos_itens/:id/ (GET)
-*https://burger-hub-api.onrender.com/pedidos_itens/:id/ (DELETE)
-*https://burger-hub-api.onrender.com/pedidos_itens/update/:id/ (PATCH)
+* https://burger-hub-api.onrender.com/pedidos_itens/create/ (POST)
+* https://burger-hub-api.onrender.com/pedidos_itens/getall/ (GET)
+* https://burger-hub-api.onrender.com/pedidos_itens/:id/ (GET)
+* https://burger-hub-api.onrender.com/pedidos_itens/:id/ (DELETE)
+* https://burger-hub-api.onrender.com/pedidos_itens/update/:id/ (PATCH)
 
 ##### body:
 Para criar um ItemPedido e atualizar também. Valor é do tipo float.
@@ -86,7 +86,7 @@ Para criar um ItemPedido e atualizar também. Valor é do tipo float.
 
 
 ##### Autenticação:
-*https://burger-hub-api.onrender.com/auth/login/ (POST)
+* https://burger-hub-api.onrender.com/auth/login/ (POST)
 
 ##### body:
 Para poder criar pedidos, itens e itensPedidos é necessário se autenticar. Ao se autenticar você vai receber um Token, onde deve ser definido no Headers:
