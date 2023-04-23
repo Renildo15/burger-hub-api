@@ -93,7 +93,6 @@ Para poder criar pedidos, itens e itensPedidos é necessário se autenticar. Ao 
 
 Authorization = Bearer <strong>Token</strong>
 
-Algumas rotas não precisam de autenticação para serem acessadas. Como todas as getall e as rotas de detail. A rota de create de clientes é a única rota de criação que não necessita está logado para criar um dado.
 ```json
 {
    "username": "", 
